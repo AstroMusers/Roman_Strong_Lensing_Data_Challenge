@@ -1,20 +1,16 @@
 # Roman Strong Lensing Data Challenge
 
-Analysis and methodology development for the **Roman Data Challenge for Dark Matter Substructure with Galaxy–Galaxy Strong Gravitational Lenses**.
+How much can Roman teach us about dark matter from the bends and brightness patterns in strong-lens arcs? The Nancy Grace Roman Space Telescope is expected to find roughly $10^5$ galaxy-galaxy strong lenses, a remarkable sample for probing structure on sub-galactic scales. But a large sample does not make the inference automatic. The lens galaxy, background source, telescope optics, and detector all leave their marks on an image.
 
-The Nancy Grace Roman Space Telescope is expected to discover approximately $begin:math:text$10\^5$end:math:text$ galaxy–galaxy strong gravitational lenses. Roman's combination of wide-field coverage, depth, and high angular resolution will make it possible to use large samples of strong lenses to probe dark matter structure on sub-galactic scales.
+We built the **Roman Data Challenge for Dark Matter Substructure with Galaxy–Galaxy Strong Gravitational Lenses** to make that inference problem concrete. Its simulated Roman observations span different dark-matter substructure populations, and its challenge rungs take participants from recovering a lens's Einstein radius to identifying CDM substructure and, eventually, tackling more demanding inference. We want to develop and compare methods that scale to Roman-sized datasets while staying honest about what the images can tell us.
 
-The Roman Strong Lensing Data Challenge provides realistic simulated Roman observations of galaxy–galaxy strong lenses with different dark matter substructure populations. The challenge is designed to develop, test, and compare scalable methods for extracting dark-matter information from Roman strong-lensing observations.
+## Questions we want these images to answer
 
-## Scientific Goals
-
-The challenge aims to:
-
-- explore optimal approaches for strong-lensing substructure analysis;
-- quantify how much information about dark matter can be extracted from Roman observations;
-- determine which strong lenses are most informative for robust substructure measurements;
-- develop methods that scale to Roman-sized datasets; and
-- build a community focused on dark-matter studies with Roman strong lenses.
+- Which strong-lensing analyses best reveal substructure in the arcs?
+- How much information about dark matter can Roman observations actually support?
+- Which lenses are most informative for robust substructure measurements?
+- Can our methods scale to Roman-sized datasets without losing sight of the inference?
+- How do we build a community around dark matter and Roman strong lenses?
 
 Strong gravitational lensing is sensitive to low-mass structure through perturbations to lensed arcs and images. Measurements of dark-matter subhalos and line-of-sight halos can therefore test the small-scale predictions of cold dark matter and alternative scenarios such as warm or self-interacting dark matter.
 
@@ -52,15 +48,15 @@ Challenge datasets are generated with [`mejiro`](https://github.com/AstroMusers/
 
 `mejiro` combines several components of the strong-lensing and image-simulation ecosystem, including:
 
-- [`SLSim`](https://github.com/LSST-strong-lensing/slsim) for populations of strong-lensing systems;
-- [`lenstronomy`](https://github.com/lenstronomy/lenstronomy) for gravitational-lensing calculations;
-- [`pyHalo`](https://github.com/dangilman/pyHalo) for dark-matter subhalos and line-of-sight structure;
-- `STPSF` for the Roman point-spread function; and
+- [`SLSim`](https://github.com/LSST-strong-lensing/slsim) for populations of strong-lensing systems
+- [`lenstronomy`](https://github.com/lenstronomy/lenstronomy) for gravitational-lensing calculations
+- [`pyHalo`](https://github.com/dangilman/pyHalo) for dark-matter subhalos and line-of-sight structure
+- `STPSF` for the Roman point-spread function
 - `romanisim` for Roman detector/image simulation.
 
 The resulting datasets incorporate astrophysical lens populations, dark-matter structure, Roman optics, and detector effects.
 
-Participants normally **do not need to generate the challenge datasets themselves**. Researchers interested in custom simulations can use `mejiro`; see the official challenge documentation for setup and configuration instructions.
+Participants normally **do not need to generate the challenge datasets themselves**. Researchers interested in custom simulations can use `mejiro`. The official challenge documentation covers setup and configuration.
 
 ## Data
 
@@ -70,7 +66,7 @@ Challenge datasets are publicly archived on **Zenodo**.
 
 The Rung 0 releases contain simulated Roman strong-lens images and associated metadata for Einstein-radius regression.
 
-Current releases include updated simulations using `romanisim`. In these releases, image values correspond to Roman L2-like units of DN/s. The latest Rung 0 unlabeled release restores the image dimensions to $begin:math:text$91\\times91$end:math:text$ pixels, corresponding to approximately $begin:math:text$10\.01\'\'$end:math:text$ on a side, to match the training dataset.
+Current releases include updated simulations using `romanisim`. In these releases, image values correspond to Roman L2-like units of DN/s. The latest Rung 0 unlabeled release restores the image dimensions to 91 × 91 pixels, about 10 arcsec on a side, to match the training dataset.
 
 ### Rung 1
 
@@ -94,24 +90,9 @@ data/
 
 Add local data products, trained models, and other large generated files to `.gitignore`.
 
-## This Repository
+## Working with the datasets
 
-This repository is intended for analysis of the Roman Strong Lensing Data Challenge datasets and development of methods for extracting strong-lensing and dark-matter information from Roman observations.
-
-A useful organization is
-
-```text
-Roman_Strong_Lensing_Data_Challenge/
-├── notebooks/       # Tutorials, exploration, and outward-facing analyses
-├── src/             # Reusable analysis and modeling functions
-├── scripts/         # Training, inference, and evaluation scripts
-├── configs/         # Analysis and model configurations
-├── results/         # Lightweight derived results
-├── figures/         # Publication-quality figures
-└── README.md
-```
-
-Where possible, reusable functionality should live in `src/` rather than being duplicated across notebooks. Notebooks should primarily demonstrate workflows, inspect datasets, visualize results, and document scientific analyses.
+We keep the multi-gigabyte challenge releases on Zenodo rather than in this checkout. The notebooks here give participants a place to inspect those files and develop analyses.
 
 ## Getting Started
 
@@ -122,11 +103,13 @@ git clone https://github.com/AstroMusers/Roman_Strong_Lensing_Data_Challenge.git
 cd Roman_Strong_Lensing_Data_Challenge
 ```
 
+From the checkout root, source `scripts/set_repository_path.sh` to set `ROMAN_STRONG_LENSING_DATA_CHALLENGE_PATH` in the current shell. Keep downloaded releases under the ignored `data/` directory and generated figures under the ignored `visuals/` directory.
+
 Create an isolated Python environment appropriate for the analysis being performed, then download the relevant labeled and unlabeled challenge datasets from Zenodo.
 
 The notebooks distributed with the Zenodo datasets provide examples for inspecting the HDF5 files and are a useful starting point for understanding the data structure.
 
-For work requiring new simulated lenses rather than the released datasets, install `mejiro` following its documentation. Generating custom challenge-like simulations requires additional Roman technical-information and PSF setup; see the official challenge documentation before attempting a local installation.
+For work requiring new simulated lenses rather than the released datasets, install `mejiro` following its documentation. Generating custom challenge-like simulations requires additional Roman technical-information and PSF setup. Consult the official challenge documentation before installing those components locally.
 
 ## Resources
 
@@ -138,7 +121,7 @@ For work requiring new simulated lenses rather than the released datasets, insta
 - **Rung 0 datasets:** search Zenodo for *Rung 0 Dataset for Roman Strong Lens Data Challenge*
 - **Rung 1 datasets:** search Zenodo for *Rung 1 Dataset for Roman Strong Lens Data Challenge*
 
-For questions about the challenge, contact: `tansu@wustl.edu.`
+For questions about the challenge, email `tansu@wustl.edu`.
 
 Discussion also takes place in the **#strong-lensing** channel of the Roman Space Telescope Slack.
 
