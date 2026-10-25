@@ -92,7 +92,7 @@ Add local data products, trained models, and other large generated files to `.gi
 
 ## Working with the datasets
 
-We keep the multi-gigabyte challenge releases on Zenodo rather than in this checkout. The notebooks here give participants a place to inspect those files and develop analyses.
+The multi-gigabyte challenge releases are hosted on Zenodo. The notebooks here help participants inspect the files and develop analyses.
 
 ## Getting Started
 
@@ -109,7 +109,7 @@ Create an isolated Python environment appropriate for the analysis being perform
 
 The notebooks distributed with the Zenodo datasets provide examples for inspecting the HDF5 files and are a useful starting point for understanding the data structure.
 
-For work requiring new simulated lenses rather than the released datasets, install `mejiro` following its documentation. Generating custom challenge-like simulations requires additional Roman technical-information and PSF setup. Consult the official challenge documentation before installing those components locally.
+To generate new simulated lenses, install `mejiro` following its documentation. Custom challenge-like simulations also require Roman technical information and PSF setup. Consult the official challenge documentation before installing those components locally.
 
 ## Resources
 
