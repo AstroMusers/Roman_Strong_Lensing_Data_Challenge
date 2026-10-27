@@ -1,16 +1,8 @@
 # Roman Strong Lensing Data Challenge
 
-How much can Roman teach us about dark matter from the bends and brightness patterns in strong-lens arcs? The Nancy Grace Roman Space Telescope is expected to find roughly $10^5$ galaxy-galaxy strong lenses, a remarkable sample for probing structure on sub-galactic scales. But a large sample does not make the inference automatic. The lens galaxy, background source, telescope optics, and detector all leave their marks on an image.
+The Nancy Grace Roman Space Telescope is expected to find roughly $10^5$ galaxy-galaxy strong lenses, a sample large enough to probe structure below galactic scales. Inferring dark-matter substructure from the arcs requires separating lens-galaxy mass, source structure, telescope optics, and detector effects.
 
-We built the **Roman Data Challenge for Dark Matter Substructure with Galaxy–Galaxy Strong Gravitational Lenses** to make that inference problem concrete. Its simulated Roman observations span different dark-matter substructure populations, and its challenge rungs take participants from recovering a lens's Einstein radius to identifying CDM substructure and, eventually, tackling more demanding inference. We want to develop and compare methods that scale to Roman-sized datasets while staying honest about what the images can tell us.
-
-## Questions we want these images to answer
-
-- Which strong-lensing analyses best reveal substructure in the arcs?
-- How much information about dark matter can Roman observations actually support?
-- Which lenses are most informative for robust substructure measurements?
-- Can our methods scale to Roman-sized datasets without losing sight of the inference?
-- How do we build a community around dark matter and Roman strong lenses?
+The **Roman Data Challenge for Dark Matter Substructure with Galaxy–Galaxy Strong Gravitational Lenses** provides simulated Roman observations spanning different dark-matter substructure populations. Its rungs progress from Einstein-radius regression to substructure classification and more demanding inference. Participants compare methods and test how lens and source structure, Roman optics, and detector noise affect recovery.
 
 Strong gravitational lensing is sensitive to low-mass structure through perturbations to lensed arcs and images. Measurements of dark-matter subhalos and line-of-sight halos can therefore test the small-scale predictions of cold dark matter and alternative scenarios such as warm or self-interacting dark matter.
 
@@ -26,13 +18,13 @@ The challenge is organized into progressively more demanding **rungs**.
 | **Rung 1** | Distinguish systems containing CDM substructure from smooth mass models | Began May 2026 |
 | **Rung 2** | More advanced dark-matter substructure inference | Began Summer 2026 |
 
-### Rung 0 — Einstein-radius regression
+### Rung 0 – Einstein-radius regression
 
 Rung 0 serves as an introduction to the challenge infrastructure and datasets. Participants train a regression model to infer the Einstein radius of simulated strong lenses.
 
 The labeled dataset provides the quantities needed for training, while the unlabeled dataset withholds the Einstein radius and related parameters for evaluation.
 
-### Rung 1 — Substructure classification
+### Rung 1 – Substructure classification
 
 Rung 1 introduces direct sensitivity to dark-matter substructure. Participants train a binary classifier to determine whether a simulated lens contains a population of CDM subhalos.
 
@@ -74,7 +66,7 @@ The Rung 1 dataset contains simulated systems with and without CDM substructure 
 
 The current unlabeled Rung 1 release corrects an exposure-time inconsistency in the earlier simulations. Participants should consult the Zenodo records and official documentation for the latest dataset versions before beginning an analysis.
 
-The datasets can be large—several GB per release—so they should generally **not be committed to this repository**.
+Zenodo hosts the multi-gigabyte challenge releases. This repository keeps those datasets outside Git.
 
 A convenient local layout is
 
@@ -88,7 +80,7 @@ data/
     └── unlabeled/
 ```
 
-Add local data products, trained models, and other large generated files to `.gitignore`.
+The repository's `.gitignore` excludes local data products, trained models, and large generated files.
 
 ## Working with the datasets
 
@@ -139,10 +131,10 @@ The Roman strong-lensing simulation and data-challenge effort is led by research
 
 Core contributors to the public challenge datasets include:
 
-- Bryce Wedig — Washington University in St. Louis
-- Alan Huang — Stony Brook University
-- Simon Birrer — Stony Brook University (co-I)
-- Tansu Daylan — Washington University in St. Louis (PI)
+- Bryce Wedig – Washington University in St. Louis
+- Alan Huang – Stony Brook University
+- Simon Birrer – Stony Brook University (co-I)
+- Tansu Daylan – Washington University in St. Louis (PI)
 
 The broader Roman Strong Lensing WFS team includes Aysu Ece Sarıcaoğlu, Jodie Xiao, Rahul Karthik, and collaborators Francis-Yan Cyr-Racine, Cora Dvorkin, Douglas P. Finkbeiner, Priyamvada Natarajan, Anna M. Nierenberg, Annika Peter, Justin D. R. Pierel, and Risa H. Wechsler.
 
